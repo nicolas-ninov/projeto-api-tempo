@@ -12,7 +12,7 @@ body {
     color: #ffffff;
     max-width: 330px;
     text-align: center;
-    background-image: url(../src/imagens/background.png);
+    background-image: url(/src/imagens/background.png);
     background-size: cover;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
