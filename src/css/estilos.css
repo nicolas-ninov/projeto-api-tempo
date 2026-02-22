@@ -1,84 +1,135 @@
 body {
-    background-color: #eeeeee;
+    background: linear-gradient(135deg, #0f172a, #1f2949);
     font-family: "Red Hat Display", sans-serif;
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 100vh;
-    justify-content: center;
 }
 
 .container {
-    background-color: #1f2949;
-    color: #ffffff;
-    max-width: 330px;
-    text-align: center;
     background-image: url('../imagens/background.png');
     background-size: cover;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+    background-position: center;
+    color: white;
+    width: 340px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
 }
 
 .busca {
     padding: 20px;
     display: flex; 
-    justify-content: center;
-    gap: 5px; 
+    gap: 6px; 
 }
 
 .busca input {
-    background-color: #0a1435;
-    padding: 10px;
-    border-radius: 5px;
-    border: none; 
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    opacity: 0.8;
-}
-
-.busca .btn-busca {
-    background-color:#0a1435;
-    cursor: pointer;
+    flex: 1;
+    background: rgba(0,0,0,0.4);
     border: none;
-    border-radius: 5px; 
-    padding: 5px 10px; 
-    opacity: 0.8;
+    padding: 10px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
 }
 
-.busca .lupa {
-    width: 30px;
-    padding: 6px;
-    opacity: 0.8;
+.busca input::placeholder {
+    color: rgba(255, 255, 255, 0.6)
+}
+
+.btn-busca {
+    background: #0ea5e9;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-busca:hover {
+    background: #0284c7;
+    transform: scale(1.05);
+}
+
+.lupa {
+    width: 26px;
+    padding: 2px;
+    opacity: 0.9;
 }
 
 .informacao-principal {
-    margin: 30px;
+    text-align: center;
+    padding: 20px;
 }
 
-.informacao-principal h1 {
+#cidade {
     font-size: 18px;
+    font-weight: 700;
 }
 
-.informacao-principal .temperatura {
-    font-size: 68px; 
-    margin: 20px 0; 
+
+.temperatura {
+    font-size: 64px; 
+    font-weight: bold;
+    margin: 10px 0; 
 }
 
-.informacao-principal .condicao {
-    font-size: 20px; 
+.condicao {
+    font-size: 18px; 
+    opacity: 0.9;
 }
 
 .informacao-secundaria {
     background-color: #ffffff;
     color: #000000;
-    padding: 20px 30px; 
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    padding: 18px; 
+    border-radius: 0 0 18px 18px;
 }
 
-.informacao-secundaria .humidade, .informacao-secundaria .velocidade-do-vento, .informacao-secundaria .regiao, .informacao-secundaria .data-e-hora {
+.informacao-secundaria div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 0; 
+    padding: 8px 0; 
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        position: relative;
+    }
+
+    .busca {
+        padding: 18px;
+    }
+
+    .temperatura {
+        font-size: 56px;
+    }
+
+    .informacao-secundaria {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    border-radius: 0;
+    padding: 22px;
+    }
+
+    .informacao-secundaria div {
+    font-size: 15px;
+    padding: 12px 0;
+    }
+
 }
